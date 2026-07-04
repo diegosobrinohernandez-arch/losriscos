@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cinegética Los Riscos · Calendario Monterías 2026/27</title>
+<meta name="description" content="Cinegética Los Riscos — 5 monterías, un solo precio cerrado. Acción completa temporada 2026/27.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,500;0,700;0,800;1,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --stone:#1a1714;
+    --stone-2:#242019;
+    --stone-3:#302a20;
+    --bone:#ede6d8;
+    --bone-dim:#a89e8c;
+    --gold:#c6a15b;
+    --gold-dim:#8b7440;
+    --copper:#8b5e34;
+    --red:#a33127;
+    --line: rgba(237,230,216,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    background:var(--stone);color:var(--bone);
+    font-family:'Inter',sans-serif;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.display{font-family:'Bodoni Moda',serif;font-weight:700;letter-spacing:-0.01em}
+  .mono{font-family:'Space Mono',monospace}
+  a{color:inherit}
+  ::selection{background:var(--gold);color:var(--stone)}
+
+  .wrap{max-width:1160px;margin:0 auto;padding:0 32px}
+  @media(max-width:640px){.wrap{padding:0 20px}}
+
+  /* jagged crag divider — reused signature shape */
+  .crag{width:100%;height:54px;display:block}
+  .crag path{fill:var(--stone-2)}
+  .crag.up path{fill:var(--stone)}
+
+  /* ---------- nav ---------- */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:60;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:24px 32px;
+  }
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Bodoni Moda',serif;font-size:1.15rem;letter-spacing:0.02em}
+  nav .links{display:flex;gap:30px;font-size:0.82rem;letter-spacing:0.04em;text-transform:uppercase}
+  nav .links a{text-decoration:none;color:var(--bone-dim);transition:color .2s}
+  nav .links a:hover{color:var(--gold)}
+  @media(max-width:780px){nav .links{display:none}}
+
+  /* ---------- hero ---------- */
+  .hero{
+    position:relative;min-height:100svh;display:flex;align-items:center;
+    background:
+      linear-gradient(180deg, rgba(26,23,20,0.4), var(--stone) 85%),
+      repeating-linear-gradient(115deg, #201c17 0px, #201c17 2px, #1a1714 2px, #1a1714 34px);
+    padding-top:80px;
+  }
+  .hero-crag-art{position:absolute;bottom:0;left:0;width:100%;opacity:0.9}
+  .hero .wrap{position:relative;z-index:2}
+  .flag-strip{display:flex;height:4px;width:70px;margin-bottom:28px}
+  .flag-strip div{flex:1}
+  .flag-strip .r{background:var(--red)}
+  .flag-strip .g{background:var(--gold)}
+  .eyebrow{
+    font-family:'Space Mono',monospace;font-size:0.78rem;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:22px;
+  }
+  .hero h1{font-size:clamp(2.6rem,8vw,6rem);line-height:0.94;max-width:900px}
+  .hero h1 .thin{font-style:italic;font-weight:500;color:var(--gold)}
+  .hero p{max-width:480px;margin-top:28px;color:var(--bone-dim);font-size:1.05rem}
+  .price-strip{
+    margin-top:48px;display:inline-flex;align-items:center;gap:22px;
+    border:1px solid var(--gold-dim);padding:20px 30px;background:rgba(198,161,91,0.06);
+  }
+  .price-strip .big{font-family:'Bodoni Moda',serif;font-size:2.4rem;color:var(--gold);line-height:1}
+  .price-strip .lbl{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.08em;color:var(--bone-dim);margin-top:4px}
+  .price-strip .sep{width:1px;height:44px;background:var(--line)}
+
+  /* ---------- fincas / cards ---------- */
+  .lineup{padding:110px 0;background:var(--stone-2)}
+  .section-head{max-width:640px;margin-bottom:60px}
+  .section-head h2{font-size:clamp(2rem,4.4vw,3rem)}
+  .section-head p{color:var(--bone-dim);margin-top:18px}
+
+  .card-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  @media(max-width:940px){.card-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:640px){.card-grid{grid-template-columns:1fr}}
+
+  .finca-card{
+    background:var(--stone-3);border:1px solid var(--line);position:relative;
+    padding:32px 28px 28px;
+    clip-path:polygon(0 0, 100% 0, 100% 92%, 92% 100%, 0 100%);
+    transition:transform .25s, border-color .25s;
+  }
+  .finca-card:hover{transform:translateY(-4px);border-color:var(--gold-dim)}
+  .finca-card .idx{font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold);letter-spacing:0.1em}
+  .finca-card h3{font-size:1.5rem;margin-top:14px}
+  .finca-card .place{font-size:0.86rem;color:var(--bone-dim);margin-top:4px;text-transform:uppercase;letter-spacing:0.04em}
+  .finca-card .date{
+    font-family:'Space Mono',monospace;color:var(--gold);font-size:1rem;margin-top:20px;
+    padding-top:16px;border-top:1px solid var(--line);
+  }
+  .finca-card .specs{display:flex;gap:18px;margin-top:14px;font-size:0.82rem;color:var(--bone-dim)}
+  .finca-card .specs b{color:var(--bone);font-weight:600}
+  .finca-card .price{
+    margin-top:20px;font-family:'Bodoni Moda',serif;font-size:1.7rem;color:var(--gold);
+  }
+  .finca-card .price small{font-family:'Inter',sans-serif;font-size:0.7rem;color:var(--bone-dim);text-transform:uppercase;letter-spacing:0.06em;display:block;font-weight:400}
+
+  /* ---------- pack completo ---------- */
+  .pack{padding:100px 0;background:var(--stone);position:relative;overflow:hidden}
+  .pack-box{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:0;
+    border:1px solid var(--gold-dim);
+    clip-path:polygon(0 0, 100% 0, 100% 100%, 6% 100%, 0 88%);
+  }
+  @media(max-width:820px){.pack-box{grid-template-columns:1fr}}
+  .pack-left{padding:56px 50px;background:var(--stone-3)}
+  .pack-left .eyebrow{color:var(--gold)}
+  .pack-left h2{font-size:clamp(1.9rem,4vw,2.6rem);margin-bottom:20px}
+  .pack-left p{color:var(--bone-dim);max-width:440px}
+  .pack-left ul{margin-top:26px;list-style:none}
+  .pack-left li{
+    padding:11px 0;border-top:1px solid var(--line);font-size:0.94rem;
+    display:flex;justify-content:space-between;color:#d7cfc0;
+  }
+  .pack-left li:first-child{border-top:none}
+  .pack-left li b{color:var(--gold);font-weight:500;font-family:'Space Mono',monospace;font-size:0.85rem}
+  .pack-right{
+    background:linear-gradient(160deg, var(--copper), var(--stone-3) 70%);
+    padding:56px 50px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;
+  }
+  .pack-right .lbl{font-size:0.78rem;text-transform:uppercase;letter-spacing:0.12em;color:var(--bone)}
+  .pack-right .price{font-family:'Bodoni Moda',serif;font-size:4rem;color:var(--bone);line-height:1;margin:18px 0 8px}
+  .pack-right .price sup{font-size:1.6rem;vertical-align:top}
+  .pack-right .note{font-size:0.86rem;color:rgba(237,230,216,0.75);max-width:280px;margin-bottom:30px}
+  .btn{
+    display:inline-block;padding:15px 30px;font-weight:600;font-size:0.92rem;text-decoration:none;
+    background:var(--stone);color:var(--gold);border:1px solid var(--gold);
+  }
+  .btn:hover{background:var(--gold);color:var(--stone)}
+
+  /* ---------- contacto ---------- */
+  .contact{padding:110px 0;background:var(--stone-2);text-align:center}
+  .contact h2{font-size:clamp(2.2rem,5.5vw,3.8rem);max-width:800px;margin:0 auto 24px}
+  .contact p{color:var(--bone-dim);max-width:460px;margin:0 auto 40px}
+  .contact-card{
+    display:inline-flex;flex-direction:column;align-items:center;gap:8px;
+    padding:34px 50px;border:1px solid var(--gold-dim);background:rgba(198,161,91,0.05);
+  }
+  .contact-card .role{font-size:0.76rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--bone-dim)}
+  .contact-card .name{font-family:'Bodoni Moda',serif;font-size:1.5rem}
+  .contact-card .tel{font-family:'Space Mono',monospace;font-size:1.3rem;color:var(--gold);text-decoration:none;margin-top:6px}
+
+  footer{padding:34px 0;background:var(--stone);border-top:1px solid var(--line);text-align:center;font-size:0.8rem;color:var(--bone-dim);font-family:'Space Mono',monospace}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="brand">
+    <svg width="30" height="30" viewBox="0 0 100 100"><path d="M10 85 L28 25 L42 60 L55 15 L68 55 L82 30 L90 85 Z" fill="none" stroke="#c6a15b" stroke-width="4" stroke-linejoin="round"/></svg>
+    Los Riscos
+  </div>
+  <div class="links">
+    <a href="#fincas">Fincas</a>
+    <a href="#pack">Acción completa</a>
+    <a href="#contacto">Reservas</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <svg class="hero-crag-art" viewBox="0 0 1400 220" preserveAspectRatio="none">
+    <path d="M0 220 L0 150 L90 60 L160 130 L230 40 L300 120 L380 20 L460 110 L540 50 L620 130 L700 30 L790 120 L870 45 L950 125 L1040 35 L1120 115 L1200 55 L1280 130 L1400 60 L1400 220 Z" fill="#242019"/>
+    <path d="M0 220 L0 190 L120 120 L210 175 L300 110 L400 170 L520 100 L630 175 L740 105 L860 172 L980 110 L1100 175 L1220 115 L1400 180 L1400 220 Z" fill="#1a1714" opacity="0.9"/>
+  </svg>
+  <div class="wrap">
+    <div class="flag-strip"><div class="r"></div><div class="g"></div><div class="r"></div></div>
+    <div class="eyebrow">Calendario de monterías · Temporada 2026/27</div>
+    <h1>Cinco fincas.<br><span class="thin">Un solo precio.</span></h1>
+    <p>Cinco monterías cerradas en fincas de Toledo y Ciudad Real, venado, jabalí y hembras sin cupo. Reserva jornada suelta o la temporada completa.</p>
+    <div class="price-strip">
+      <div><div class="big">390€</div><div class="lbl">Por jornada</div></div>
+      <div class="sep"></div>
+      <div><div class="big">1.800€</div><div class="lbl">Acción completa</div></div>
+    </div>
+  </div>
+</header>
+<svg class="crag" viewBox="0 0 1200 54" preserveAspectRatio="none"><path d="M0,54 L0,30 L60,8 L130,26 L200,4 L280,24 L360,0 L450,22 L540,6 L640,24 L740,2 L850,22 L960,6 L1080,24 L1200,8 L1200,54 Z"/></svg>
+
+<section class="lineup" id="fincas">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow">Programa 2026/27</div>
+      <h2>Las cinco monterías</h2>
+      <p>45–50 puestos, rehalas de 14 a 16 perros, venado, jabalí y hembras sin cupo en todas las jornadas.</p>
+    </div>
+    <div class="card-grid">
+      <div class="finca-card">
+        <div class="idx">Jornada 01 · Toledo</div>
+        <h3>Valtravieso</h3>
+        <div class="place">La Solana</div>
+        <div class="date">07 / 11 / 2026</div>
+        <div class="specs"><span><b>45–50</b> puestos</span><span><b>14–16</b> rehalas</span></div>
+        <div class="price">390€<small>Venado · Jabalí · Hembras, sin cupo</small></div>
+      </div>
+      <div class="finca-card">
+        <div class="idx">Jornada 02 · Ciudad Real</div>
+        <h3>Carvao</h3>
+        <div class="place">Los Barrancos</div>
+        <div class="date">21 / 11 / 2026</div>
+        <div class="specs"><span><b>45–50</b> puestos</span><span><b>14–16</b> rehalas</span></div>
+        <div class="price">390€<small>Venado · Jabalí · Hembras, sin cupo</small></div>
+      </div>
+      <div class="finca-card">
+        <div class="idx">Jornada 03 · Toledo</div>
+        <h3>Castillejo</h3>
+        <div class="place">La Lumbrera</div>
+        <div class="date">17 / 12 / 2026</div>
+        <div class="specs"><span><b>45–50</b> puestos</span><span><b>14–16</b> rehalas</span></div>
+        <div class="price">390€<small>Venado · Jabalí · Hembras, sin cupo</small></div>
+      </div>
+      <div class="finca-card">
+        <div class="idx">Jornada 04 · Ciudad Real</div>
+        <h3>La Polvorosa</h3>
+        <div class="place">La Madroña</div>
+        <div class="date">16 / 01 / 2027</div>
+        <div class="specs"><span><b>45–50</b> puestos</span><span><b>14–16</b> rehalas</span></div>
+        <div class="price">390€<small>Venado · Jabalí · Hembras, sin cupo</small></div>
+      </div>
+      <div class="finca-card">
+        <div class="idx">Jornada 05 · Toledo</div>
+        <h3>Los Aljibes</h3>
+        <div class="place">La Lobera</div>
+        <div class="date">06 / 02 / 2027</div>
+        <div class="specs"><span><b>45–50</b> puestos</span><span><b>14–16</b> rehalas</span></div>
+        <div class="price">390€<small>Venado · Jabalí · Hembras, sin cupo</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="pack" id="pack">
+  <div class="wrap">
+    <div class="pack-box">
+      <div class="pack-left">
+        <div class="eyebrow">Reserva la temporada</div>
+        <h2>Acción completa</h2>
+        <p>Las cinco jornadas de la temporada al precio cerrado, sin sorpresas ni recargos por finca.</p>
+        <ul>
+          <li>Valtravieso, La Solana <b>07/11</b></li>
+          <li>Carvao, Los Barrancos <b>21/11</b></li>
+          <li>Castillejo, La Lumbrera <b>17/12</b></li>
+          <li>La Polvorosa, La Madroña <b>16/01</b></li>
+          <li>Los Aljibes, La Lobera <b>06/02</b></li>
+        </ul>
+      </div>
+      <div class="pack-right">
+        <div class="lbl">Cinco jornadas</div>
+        <div class="price">1.800<sup>€</sup></div>
+        <div class="note">Equivale a 360€ por jornada frente a los 390€ de la reserva suelta.</div>
+        <a class="btn" href="#contacto">Reservar temporada</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contacto">
+  <div class="wrap">
+    <div class="eyebrow" style="justify-content:center">Reservas</div>
+    <h2>Las plazas se confirman<br>por orden de llamada.</h2>
+    <p>Consulta jornadas sueltas disponibles o cierra la temporada completa directamente con la organización.</p>
+    <div class="contact-card">
+      <div class="role">Reservas</div>
+      <div class="name">Sr. Alonso</div>
+      <a class="tel" href="tel:659793607">659 79 36 07</a>
+    </div>
+  </div>
+</section>
+
+<footer>CINEGÉTICA LOS RISCOS · CALENDARIO DE MONTERÍAS 2026/27</footer>
+
+</body>
+</html>
